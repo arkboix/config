@@ -1,0 +1,20 @@
+@import '~/.config/rofi/config.rasi'
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    width: 30%;
+    transparency: "real";
+    location: center;
+}
+
+listview {
+    lines: 10;
+    fixed-height: true;
+}
+
+entry {
+    placeholder: "Search clipboard...";
+}

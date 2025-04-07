@@ -1,0 +1,43 @@
+// -*- mode: jsonc -*-
+{
+     "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    "width": 180, // Waybar width
+    "spacing": 4,
+    "margin": 6, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+    ],
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+    "modules-right": [
+    ],
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+"wlr/taskbar": {
+    "icon-size": 48,
+    "icon-theme": "Adwaita-Dark",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "format": "{icon}"
+},
+
+
+    }
+}

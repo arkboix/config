@@ -1,0 +1,12 @@
+[2025-04-05 12:46:01.694] [info] Using configuration file config.jsonc
+[2025-04-05 12:46:01.696] [info] Discovered appearance 'dark'
+[2025-04-05 12:46:01.696] [info] Using CSS file style.css
+basic_string::_M_create
+[2025-04-05 12:46:01.794] [warning] Requested height: 40 is less than the minimum height: 68 required by the modules
+[2025-04-05 12:46:01.794] [info] Bar configured (width: 342, height: 68) for output: eDP-1
+[2025-04-05 12:46:14.567] [info] Using configuration file config.jsonc
+[2025-04-05 12:46:14.569] [info] Discovered appearance 'dark'
+[2025-04-05 12:46:14.569] [info] Using CSS file style.css
+basic_string::_M_create
+[2025-04-05 12:46:14.643] [warning] Requested height: 40 is less than the minimum height: 68 required by the modules
+[2025-04-05 12:46:14.643] [info] Bar configured (width: 342, height: 68) for output: eDP-1

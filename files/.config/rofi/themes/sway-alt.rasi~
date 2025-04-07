@@ -1,0 +1,145 @@
+/**
+ * A floating box version of the paper theme (Gruvbox edition).
+ *
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+* {
+    yellow: #fabd2f;
+    white:  #ebdbb2;
+    black:  #282828;
+    grey:   #3c3836;
+    red:    #cc241d;
+    blue:   #458588;
+    green:  #98971a;
+    background-light: #1d2021; /* Gruvbox dark background */
+
+    spacing: 2;
+    background-color: #00000000;
+    border-color: #d79921; /* Gruvbox yellow border */
+    anchor: north;
+    location: center;
+}
+window {
+    transparency: "real";
+    background-color: #00000000; /* Dark background */
+    border: 0;
+    padding: 0% 0% 1em 0%;
+    x-offset: 0;
+    y-offset: -10%;
+}
+mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 1%;
+}
+message {
+    border: 2px;
+    padding: 1em;
+    background-color: @background-light; /* Dark background */
+    text-color: @white; /* White text for contrast */
+}
+textbox normal {
+    text-color: @white;
+    padding: 0;
+    border: 0;
+}
+listview {
+    fixed-height: 1;
+    border: 2px;
+    padding: 1em;
+    reverse: false;
+
+    columns: 1;
+    background-color: @background-light; /* Dark background */
+}
+element {
+    border: 0;
+    padding: 4px;
+    highlight: bold;
+}
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+element normal.normal {
+    text-color: @white;
+    background-color: #00000000;
+}
+element normal.urgent {
+    text-color: @red;
+    background-color: @background-light;
+}
+element normal.active {
+    text-color: @blue;
+    background-color: @background-light;
+}
+element selected.normal {
+    text-color: @black; /* Black selected foreground */
+    background-color: @yellow; /* Gruvbox yellow selected background */
+}
+element selected.urgent {
+    text-color: @black;
+    background-color: @yellow;
+}
+element selected.active {
+    text-color: @black;
+    background-color: @yellow;
+}
+element alternate.normal {
+    text-color: @white;
+    background-color: @grey; /* Gruvbox grey alternate */
+}
+element alternate.urgent {
+    text-color: @red;
+    background-color: #3a2929;
+}
+element alternate.active {
+    text-color: @blue;
+    background-color: #2d353b;
+}
+scrollbar {
+    border: 0;
+    padding: 0;
+}
+inputbar {
+    spacing: 0;
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @background-light;
+    index: 0;
+}
+inputbar normal {
+    foreground-color: @white;
+    background-color: #00000000;
+}
+mode-switcher {
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @background-light;
+    index: 10;
+}
+button selected {
+    text-color: @yellow; /* Gruvbox yellow for selected buttons */
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+prompt, entry {
+    text-color: @white;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em;
+    text-color: @white;
+}
+error-message {
+    border: 2px;
+    padding: 1em;
+    background-color: @red;
+    text-color: @black;
+}

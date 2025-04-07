@@ -1,0 +1,269 @@
+
+/* Keep all the colorscheme definitions as they are */
+/* Tokyo Night */
+@define-color background #1a1b26;
+@define-color background-light #24283b;
+@define-color foreground #c0caf5;
+@define-color black #15161e;
+@define-color red #f7768e;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color blue #7aa2f7;
+@define-color magenta #bb9af7;
+@define-color cyan #7dcfff;
+@define-color white #a9b1d6;
+@define-color orange #ff9e64;
+
+
+
+/* Gruvbox Dark Colors */
+@define-color background #282828;
+@define-color background-light #3c3836;
+@define-color foreground #ebdbb2;
+@define-color black #32302f;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #ebdbb2;
+@define-color orange #d65d0e;
+
+
+/* Everforest Dark Colors */
+@define-color background #2b3339;
+@define-color background-light #323c41;
+@define-color foreground #d3c6aa;
+@define-color black #3c474d;
+@define-color red #e67e80;
+@define-color green #a7c080;
+@define-color yellow #dbbc7f;
+@define-color blue #7fbbb3;
+@define-color magenta #d699b6;
+@define-color cyan #83c092;
+@define-color white #d3c6aa;
+@define-color orange #e69875;
+
+
+/* Pastel TTY Colors */
+@define-color background #212121;
+@define-color background-light #3a3a3a;
+@define-color foreground #e0e0e0;
+@define-color black #5a5a5a;
+@define-color red #ff9a9e;
+@define-color green #b5e8a9;
+@define-color yellow #ffe6a7;
+@define-color blue #63a4ff;
+@define-color magenta #dda0dd;
+@define-color cyan #a3e8e8;
+@define-color white #ffffff;
+@define-color orange #ff8952;
+
+
+
+/* One Dark */
+@define-color background #282c34;
+@define-color background-light #3e4451;
+@define-color foreground #abb2bf;
+@define-color black #282c34;
+@define-color red #e06c75;
+@define-color green #98c379;
+@define-color yellow #e5c07b;
+@define-color blue #61afef;
+@define-color magenta #c678dd;
+@define-color cyan #56b6c2;
+@define-color white #abb2bf;
+@define-color orange #d19a66;
+
+
+/* Modules */
+
+
+
+@define-color bg @background;
+@define-color fg @foreground;
+
+@define-color workspaces-foc @blue;
+@define-color window @cyan;
+@define-color pulseaudio @cyan;
+@define-color network @orange;
+@define-color cpu @magenta;
+@define-color memory @yellow;
+@define-color bat @green;
+@define-color clock @red;
+@define-color tray @white;
+
+/* Styling for all modules */
+* {
+    font-family: "Ubuntu Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg;
+    border-bottom: 2px solid @blue;
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @fg;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @fg;
+}
+
+#workspaces button:hover {
+    background: @background-light;
+}
+
+#workspaces button.focused {
+    background-color: transparent;
+    border-top: 2px solid @workspaces-foc;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: @fg;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#window {
+    border-top: 2px solid @window;
+}
+
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: transparent;
+    border-top: 2px solid @clock;
+    
+}
+
+#battery {
+    background-color: transparent;
+    border-top: 2px solid @bat;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: @white;
+        color: @black;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @fg;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: @fg;
+    background-color: transparent;
+    border-top: 2px solid @cpu;
+}
+
+#memory {
+    background-color: transparent;
+    border-top: 2px solid @memory;
+}
+
+
+#network {
+    background-color: transparent;
+    border-top: 2px solid @network;
+}
+
+#network.disconnected {
+    background-color: transparent;
+    border-top: 2px solid @red;
+}
+
+#pulseaudio {
+    background-color: @transparent;
+    color: @fg;
+    border-top: 2px solid @pulseaudio;
+}
+
+#tray {
+    background-color: transparent;
+    border-top: 2px solid @tray;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: transparent;
+    border-top: 2px solid @red;
+}
+

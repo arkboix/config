@@ -1,0 +1,119 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* -- Modified By https://github.com/arkboix -- */
+/* Main Config (wallpaper) */
+
+@import "~/.config/rofi/themes/style-2.rasi"
+
+
+/* ---- Configuration ---- */
+configuration {
+  modi: "drun";
+  show-icons: true;
+  click-to-exit: true;
+}
+
+window {
+  width: 80%;
+  height: 70%;
+  border: 0px 0px 0px 0px;
+  location: center;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+entry {
+  expand: true;
+  placeholder: "Search / Choose Wallpaper";
+  placeholder-color: @foreground;
+  horizontal-align: 0;
+  horizontal-align: 0;
+  color: @color4;
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 9;
+  lines: 4;
+  spacing: 20px;
+  padding: 10px;
+  dynamic: true;
+  flow: vertical;
+  fixed-width: true;
+  scrollbar: true;
+  fixed-height: false;
+  cycle: false;
+}
+
+scrollbar {
+          handle-width: 4px;
+}
+
+
+/* ---- Element ---- */
+element {
+  orientation: vertical;
+  padding: 0px;
+  spacing: 0px;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 0px;
+  text-color: @foreground;
+  background-color: transparent;
+}
+
+element alternative {
+ background-color: transparent;
+}
+
+
+
+element.alternate.normal {
+    background-color: transparent;
+}
+
+element.alternate.urgent {
+    background-color: transparent;
+}
+
+element.alternate.active {
+    background-color: transparent;
+}
+
+
+element selected.normal {
+  background-color: transparent;
+}
+
+element-icon {
+    text-color:                  inherit;
+    size:                        10%;
+    border-radius: 12px;
+    background-color: transparent;
+    margin:                      -30px;
+    cursor:                      inherit;
+}
+
+element-icon selected {
+             background-color: none;
+}
+
+element-text {
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 12px;
+}
+
+
+element-text selected {
+    background-color: @selected;
+}
+
+entry {
+      text-color: @white;
+}

@@ -1,0 +1,76 @@
+/* Rofi Configuration File */
+/* https://github.com/arkboix/dotfiles */
+configuration {
+    modi: "drun,run,window,ssh,combi";
+    font: "Mononoki Nerd Font 12";
+    me-select-entry: "w";
+    me-accept-entry: "MousePrimary";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "󰀻 Apps";
+    display-run: "󰌧 Run";
+    display-window: "󱂬 Windows";
+    display-ssh: "󰣀 SSH";
+    display-combi: "󰕘 Combi";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+
+    /* Settings */
+    terminal: "kitty";
+    sidebar-mode: false;
+    combi-modi: "window,drun,run";
+    click-to-exit: true;
+    sorting-method: "levenshtein";
+    matching: "fuzzy";
+    case-sensitive: false;
+    cycle: true;
+
+    /* Vim keybindings */
+    kb-row-up: "Up,Control+k";
+    kb-row-tab: "";
+    kb-mode-previous: "Shift+Tab,Control+h";
+
+    /* Improved screen navigation */
+    kb-primary-paste: "Control+v";
+    kb-secondary-paste: "Control+Shift+v";
+    kb-clear-line: "Control+w";
+    kb-move-front: "Control+a";
+    kb-move-end: "Control+e";
+    kb-row-first: "Home,KP_Home";
+    kb-row-last: "End,KP_End";
+    kb-remove-to-eol: "Control+Shift+e";
+    kb-remove-char-back: "BackSpace";
+    hover-select:               	true;
+    click-to-exit: 		            true;
+}
+
+
+
+//@theme "/usr/share/rofi/themes/material.rasi"
+
+
+//@theme "/home/arkboi/.config/rofi/themes/sway.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/sway.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/squared-everforest.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/sway.rasi"
+
+//@theme "/usr/share/rofi/themes/paper-float.rasi"
+
+//@theme "~/.config/rofi/themes/sway-alt.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/hypr.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/sway-alt.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/hypr.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/sway-alt.rasi"
+
+@theme "/home/a/.config/rofi/themes/sway-alt.rasi"

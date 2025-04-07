@@ -1,0 +1,11 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export MOZ_ENABLE_WAYLAND:1
+SETUVAR --export QT_QPA_PLATFORM:wayland
+SETUVAR --export XDG_CURRENT_DESKTOP:sway
+SETUVAR --export XDG_CURRENT_SESSION:sway
+SETUVAR --export XDG_SESSION_DESKTOP:sway
+SETUVAR --export XDG_SESSION_TYPE:wayland
+SETUVAR __fish_initialized:3800
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_selected_background:\x2dr

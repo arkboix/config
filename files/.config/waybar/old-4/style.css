@@ -1,0 +1,169 @@
+@define-color bg black;
+@define-color fg white;
+
+* {
+    font-family: "Ubuntu Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg;
+    border-bottom: none;
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+window#waybar > box {
+    padding: 6px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: #242424;
+}
+
+#workspaces {
+    background-color: #242424;
+    border-radius: 14px;
+}
+
+
+#workspaces button {
+    padding: 0 5px;
+    padding-top: 0px;
+    transition: all 0.2s ease-in-out;
+    padding-bottom: 0px;
+    background-color: transparent;
+    color: @fg;
+    font-weight: lighter;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    font-weight: bolder;
+    color: black;
+  transition: all 0.2s ease-in-out;
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 14px;
+}
+
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: @fg;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: transparent;
+}
+
+#battery {
+    background-color: transparent;
+    color: @fg;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: red;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: transparent;
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+#backlight {
+    background-color: transparent;
+}
+
+#network {
+    background-color: transparent;
+}
+
+#network.disconnected {
+    background-color: transparent;
+}
+
+#pulseaudio {
+    background-color: @transparent;
+    color: @fg;
+}
+
+#pulseaudio.muted {
+    background-color: transparent;
+    color: @fg;
+}
+
+
+
+#pulseaudio, #network, #backlight {
+    background-color: #242424;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 0px;
+    border-radius: 14px;
+}

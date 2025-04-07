@@ -1,0 +1,145 @@
+/**
+ * A floating box version of the paper theme (One Dark edition, Blue Accent).
+ *
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+* {
+    blue:   #61afef; /* One Dark blue */
+    white:  #abb2bf;
+    black:  #282c34;
+    grey:   #3e4451;
+    red:    #e06c75;
+    green:  #98c379;
+    yellow: #e5c07b;
+    background-light: #2c313a; /* One Dark background */
+
+    spacing: 2;
+    background-color: #00000000;
+    border-color: @blue; /* Blue border */
+    anchor: north;
+    location: center;
+}
+window {
+    transparency: "real";
+    background-color: #00000000; /* Transparent background */
+    border: 0;
+    padding: 0% 0% 1em 0%;
+    x-offset: 0;
+    y-offset: -10%;
+}
+mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 1%;
+}
+message {
+    border: 2px;
+    padding: 1em;
+    background-color: @background-light; /* Dark background */
+    text-color: @white; /* White text for contrast */
+}
+textbox normal {
+    text-color: @white;
+    padding: 0;
+    border: 0;
+}
+listview {
+    fixed-height: 1;
+    border: 2px;
+    padding: 1em;
+    reverse: false;
+
+    columns: 1;
+    background-color: @background-light; /* Dark background */
+}
+element {
+    border: 0;
+    padding: 4px;
+    highlight: bold;
+}
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+element normal.normal {
+    text-color: @white;
+    background-color: #00000000;
+}
+element normal.urgent {
+    text-color: @red;
+    background-color: @background-light;
+}
+element normal.active {
+    text-color: @blue;
+    background-color: @background-light;
+}
+element selected.normal {
+    text-color: @black; /* Black selected foreground */
+    background-color: @blue; /* Blue selected background */
+}
+element selected.urgent {
+    text-color: @black;
+    background-color: @blue;
+}
+element selected.active {
+    text-color: @black;
+    background-color: @blue;
+}
+element alternate.normal {
+    text-color: @white;
+    background-color: @grey; /* One Dark grey alternate */
+}
+element alternate.urgent {
+    text-color: @red;
+    background-color: #4b2b2e;
+}
+element alternate.active {
+    text-color: @blue;
+    background-color: #2b3b50;
+}
+scrollbar {
+    border: 0;
+    padding: 0;
+}
+inputbar {
+    spacing: 0;
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @background-light;
+    index: 0;
+}
+inputbar normal {
+    foreground-color: @white;
+    background-color: #00000000;
+}
+mode-switcher {
+    border: 2px;
+    padding: 0.5em 1em;
+    background-color: @background-light;
+    index: 10;
+}
+button selected {
+    text-color: @blue; /* Blue for selected buttons */
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+prompt, entry {
+    text-color: @white;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em;
+    text-color: @white;
+}
+error-message {
+    border: 2px;
+    padding: 1em;
+    background-color: @red;
+    text-color: @black;
+}

@@ -1,0 +1,116 @@
+###
+# https://fishshell.com/docs/current/index.html
+# https://github.com/jorgebucaran/cookbook.fish
+
+set fish_greeting
+
+# themes
+
+# colors to set or unset
+
+set fish_color_autosuggestion "#5a5a5a"
+set fish_color_cancel -r
+set fish_color_command "#63a4ff"
+set fish_color_comment "#d9be38"
+set fish_color_cwd "#b5e8a9"
+set fish_color_cwd_root "#ff9a9e"
+set fish_color_end "#dda0dd"
+set fish_color_error "#ff9a9e"
+set fish_color_escape "#ff8952"
+set fish_color_history_current --bold
+set fish_color_host "#b5e8a9"
+set fish_color_host_remote "#d9be38"
+set fish_color_match --background="#63a4ff"
+set fish_color_normal normal
+set fish_color_operator "#ff8952"
+set fish_color_param "#63a4ff"
+set fish_color_quote "#b5e8a9"
+set fish_color_redirection "#dda0dd"
+set fish_color_search_match "#d9be38" --background="#3a3a3a"
+set fish_color_selection "#ffffff" --bold --background="#3a3a3a"
+set fish_color_status "#ff9a9e"
+set fish_color_user "#b5e8a9"
+set fish_color_valid_path --underline
+set fish_pager_color_completion normal
+set fish_pager_color_description "#d9be38" "#ff8952"
+set fish_pager_color_prefix normal --bold --underline
+set fish_pager_color_progress "#ffffff" --background="#63a4ff"
+set fish_color_search_match --background="#63a4ff"
+
+# Set XDG variables for Fish shell in Sway
+set -Ux QT_QPA_PLATFORM wayland
+set -Ux XDG_CURRENT_DESKTOP sway
+set -Ux XDG_SESSION_DESKTOP sway
+set -Ux XDG_CURRENT_SESSION sway
+set -Ux XDG_SESSION_TYPE wayland
+set -Ux GDK_BACKEND wayland,x11
+set -Ux MOZ_ENABLE_WAYLAND 1
+set LC_CTYPE en_US.utf8
+
+# Starship
+starship init fish | source
+
+# Fastfetch
+
+function random_positive_message
+    set quotes \
+        "Every day is a fresh start." \
+        "You're stronger than you think." \
+        "The best way out is always through." \
+        "Do what you can, with what you have, where you are." \
+        "Small steps every day lead to big changes." \
+        "You are enough, just as you are." \
+        "Difficult roads often lead to beautiful destinations." \
+        "Failure is just another step towards success." \
+        "You have survived 100% of your bad days." \
+        "Growth begins at the end of your comfort zone." \
+        "Your potential is limitless." \
+        "Be the reason someone smiles today." \
+        "It always seems impossible until it's done." \
+        "Your mindset is your superpower." \
+        "The only time you fail is when you stop trying." \
+        "Focus on progress, not perfection." \
+        "Storms make trees take deeper roots." \
+        "Believe you can, and you're halfway there." \
+        "You are the artist of your own life." \
+        "Every challenge is an opportunity to grow." \
+        "No rain, no flowers." \
+        "Nothing worth having comes easy." \
+        "Make today count." \
+        "Keep going. You’re getting there." \
+        "You can do hard things." \
+        "Happiness is a choice you make every day." \
+        "Your only limit is you." \
+        "One day at a time." \
+        "The sun will rise, and we will try again." \
+        "Even the darkest night will end and the sun will rise." \
+        "Strength grows in the moments you think you can't go on." \
+        "You are capable of amazing things." \
+        "No pressure, no diamonds." \
+        "Dream big, start small, act now." \
+        "You are someone’s reason to smile." \
+        "Great things never come from comfort zones." \
+        "Doubt kills more dreams than failure ever will." \
+        "Act as if what you do makes a difference. It does." \
+        "Mistakes are proof that you are trying." \
+        "Your vibe attracts your tribe." \
+        "Just keep swimming." \
+        "Don't be afraid to shine." \
+        "Nothing can dim the light that shines from within." \
+        "Keep moving forward." \
+        "Don't watch the clock; do what it does. Keep going." \
+        "Be yourself; everyone else is already taken." \
+        "Take the risk or lose the chance." \
+        "Success is the sum of small efforts, repeated daily." \
+        "Your future is created by what you do today." \
+        "The only way to do great work is to love what you do."
+
+    # Pick a random quote
+    set choice (random 1 (count $quotes))
+    echo $quotes[$choice]
+end
+
+# Call it on shell startup
+echo
+#random_positive_message
+./Projects/ColorScripts/run.sh

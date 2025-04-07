@@ -1,0 +1,229 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 2,
+    "margin-top": 3,
+    "margin-left": 8,
+    "margin-right": 8,
+    
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces",
+        "custom/playerctl",
+        "mpd"
+    ],
+    
+    "modules-center": [
+        "clock"
+    ],
+    
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "disk",
+        "network",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "custom/updates",
+        "idle_inhibitor",
+        "tray"
+    ],
+    
+    
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "niri-menu",
+        "tooltip": false
+    },
+    
+    "mpd": {
+        "format": "󰎆 {stateIcon} {artist} - {title}",
+        "format-disconnected": "󰎊 Disconnected",
+        "format-stopped": "󰓛 Stopped",
+        "max-length": 30,
+        "interval": 2,
+        "state-icons": {
+            "paused": "󰏤",
+            "playing": "󰐊"
+        },
+        "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "on-click": "mpc toggle",
+        "on-click-middle": "mpc prev",
+        "on-click-right": "mpc next",
+        "on-scroll-up": "mpc volume +2",
+        "on-scroll-down": "mpc volume -2"
+    },
+    
+    "custom/playerctl": {
+        "format": "󰎈 {}",
+        "max-length": 40,
+        "interval": 1,
+        "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+        "exec-if": "playerctl status",
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next"
+    },
+    
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰒳",
+            "deactivated": "󰒲"
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Keeping system awake",
+        "tooltip-format-deactivated": "Not preventing sleep"
+    },
+    
+    "clock": {
+        "format": "󰃰 {:%a, %b %d  󰥔  %H:%M}",
+        "format-alt": "󰃰 {:%Y-%m-%d  󰥔  %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'>{}</span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+        "interval": 1
+    },
+    
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "format-alt": "󰻠 {load}",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "Load: {load}\nUsage: {usage}%"
+    },
+    
+    "memory": {
+        "format": "󰍛 {percentage}%",
+        "format-alt": "󰍛 {used:0.1f}GB",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "Used: {used:0.1f}GB\nAvailable: {avail:0.1f}GB\nTotal: {total:0.1f}GB"
+    },
+    
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "󰸁 {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "tooltip": true,
+        "interval": 2
+    },
+    
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󱘖 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% - {time} remaining"
+    },
+    
+    "network": {
+        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "tooltip-format": "󱘖 {ifname} via {gwaddr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 Disconnected",
+        "format-alt": "󱘖 {bandwidthUpBits} | {bandwidthDownBits}",
+        "interval": 5
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂯 {volume}%",
+        "format-bluetooth-muted": "󰂲 Muted",
+        "format-muted": "󰝟 Muted",
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰄡",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip": true
+    },
+    
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "exit 0",
+        "interval": 3600,
+        "signal": 8,
+        "tooltip": true,
+        "tooltip-format": "{} updates available",
+        "on-click": "kitty -e sudo pacman -Syu"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4
+    },
+    
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "format-alt": "󰋊 {free}",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "Used: {used}\nFree: {free}\nTotal: {total}"
+    },
+    
+    "custom/weather": {
+        "format": "{} °",
+        "tooltip": true,
+        "exec": "curl -s 'https://wttr.in/?format=1'",
+        "interval": 3600
+    },
+    
+    "custom/uptime": {
+        "format": "󰔟 {}",
+        "interval": 60,
+        "exec": "uptime -p | sed 's/up //'",
+        "tooltip": false
+    }
+}

@@ -1,0 +1,13 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# BEGIN_KITTY_THEME
+# One Dark
+include current-theme.conf
+# END_KITTY_THEME
+
+font_family Mononoki Nerd Font
+font_size 18
+window_padding_width 8
+tab_bar_style powerline
+confirm_os_window_close 0
+background_opacity 1

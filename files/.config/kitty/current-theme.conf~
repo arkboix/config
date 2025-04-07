@@ -1,0 +1,68 @@
+# vim:ft=kitty
+## name: Pastel TTY
+## author: arkboi
+## blurb: A pastel take on the standard TTY color scheme
+
+foreground                      #e0e0e0
+background                      #212121
+selection_foreground            #a0a0a0
+selection_background            #3a3a3a
+
+cursor                          #e0e0e0
+cursor_text_color               #323232
+
+url_color                       #a5d8ff
+
+active_border_color             #b5e8a9
+inactive_border_color           #5a5a5a
+bell_border_color               #ffbb8a
+visual_bell_color               none
+
+wayland_titlebar_color          system
+macos_titlebar_color            system
+
+active_tab_background           #282828
+active_tab_foreground           #e0e0e0
+inactive_tab_background         #3a3a3a
+inactive_tab_foreground         #a0a0a0
+tab_bar_background              #323232
+tab_bar_margin_color            none
+
+mark1_foreground                #282828
+mark1_background                #a5d8ff
+mark2_foreground                #282828
+mark2_background                #e0e0e0
+mark3_foreground                #282828
+mark3_background                #dda0dd
+
+#: black
+color0                          #4a4a4a
+color8                          #808080
+
+#: red
+color1                          #ff9a9e
+color9                          #ff9a9e
+
+#: green
+color2                          #b5e8a9
+color10                         #b5e8a9
+
+#: yellow
+color3                          #ffe6a7
+color11                         #ffe6a7
+
+#: blue
+color4                          #7fbbb3
+color12                         #7fbbb3
+
+#: magenta
+color5                          #dda0dd
+color13                         #dda0dd
+
+#: cyan
+color6                          #a3e8e8
+color14                         #a3e8e8
+
+#: white
+color7                          #e0e0e0
+color15                         #ffffff

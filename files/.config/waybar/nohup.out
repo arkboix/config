@@ -1,0 +1,228 @@
+[2025-04-04 20:43:09.030] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-04 20:43:09.033] [info] Discovered appearance 'dark'
+[2025-04-04 20:43:09.033] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-04 20:43:09.038] [info] Niri IPC starting
+[2025-04-04 20:43:09.213] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+
+** (waybar:117213): WARNING **: 20:43:09.234: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:43:50.977: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:43:51.535: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:43:51.540: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:44:59.765: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:45:02.502: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:45:02.511: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:45:05.980: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:45:07.179: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:45:07.184: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:45:10.200: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:45:11.143: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:45:11.148: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:48:47.911: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:48:48.992: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:48:48.997: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:117213): WARNING **: 20:48:54.879: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+(waybar:117213): LIBDBUSMENU-GLIB-WARNING **: 20:48:56.053: Getting layout failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownObject: No such object path '/MenuBar'
+
+** (waybar:117213): WARNING **: 20:48:56.058: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+Gdk-Message: 20:49:16.711: Error reading events from display: Connection reset by peer
+[2025-04-05 10:19:53.113] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 10:19:53.117] [info] Discovered appearance 'dark'
+[2025-04-05 10:19:53.117] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 10:19:53.122] [info] Niri IPC starting
+[2025-04-05 10:19:53.146] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-04-05 10:33:48.797] [warning] Requested height: 30 is less than the minimum height: 32 required by the modules
+[2025-04-05 10:33:48.797] [info] Bar configured (width: 1920, height: 32) for output: eDP-1
+[2025-04-05 10:35:28.319] [info] Reloading...
+[2025-04-05 10:35:28.322] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 10:35:28.325] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 10:35:28.357] [info] Bar configured (width: 1920, height: 38) for output: eDP-1
+[2025-04-05 10:35:32.877] [info] Reloading...
+[2025-04-05 10:35:32.881] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 10:35:32.881] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 10:35:32.906] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+[2025-04-05 10:35:37.074] [info] Reloading...
+[2025-04-05 10:35:37.077] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 10:35:37.077] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 10:35:37.102] [warning] Requested height: 30 is less than the minimum height: 32 required by the modules
+[2025-04-05 10:35:37.102] [info] Bar configured (width: 1920, height: 32) for output: eDP-1
+[2025-04-05 10:36:05.605] [info] Reloading...
+[2025-04-05 10:36:05.612] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 10:36:05.612] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 10:36:05.638] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 10:36:05.638] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:00:02.782] [info] Reloading...
+[2025-04-05 11:00:02.791] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:00:02.793] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:00:02.809] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:00:02.809] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:01:39.416] [info] Reloading...
+[2025-04-05 11:01:39.418] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:01:39.418] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:01:39.433] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:01:39.433] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:01:40.828] [info] Reloading...
+[2025-04-05 11:01:40.833] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:01:40.833] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:01:40.846] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:01:40.847] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:01:43.241] [info] Reloading...
+[2025-04-05 11:01:43.248] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:01:43.248] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:01:43.263] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:01:43.263] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:01:49.315] [info] Reloading...
+[2025-04-05 11:01:49.322] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:01:49.322] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:01:49.343] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:01:49.343] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:01:53.181] [info] Reloading...
+[2025-04-05 11:01:53.186] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:01:53.186] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:01:53.205] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:01:53.205] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:04:38.498] [info] Reloading...
+[2025-04-05 11:04:38.508] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 11:04:38.508] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 11:04:38.534] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 11:04:38.535] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:20:23.415] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 11:20:23.416] [info] Bar configured (width: 1280, height: 36) for output: eDP-1
+[2025-04-05 11:20:27.822] [info] Bar configured (width: 1280, height: 36) for output: eDP-1
+[2025-04-05 11:20:27.824] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:06:12.953] [info] Reloading...
+[2025-04-05 12:06:12.959] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:06:12.959] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:06:12.998] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:06:12.998] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:06:26.679] [info] Reloading...
+[2025-04-05 12:06:26.680] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:06:26.680] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:06:26.710] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:06:26.710] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:06:45.270] [info] Reloading...
+[2025-04-05 12:06:45.275] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:06:45.276] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:06:45.313] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:06:45.313] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:06:58.893] [info] Reloading...
+[2025-04-05 12:06:58.896] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:06:58.897] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:06:58.944] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:06:58.944] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:11:25.733] [info] Reloading...
+[2025-04-05 12:11:25.735] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:11:25.735] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:11:25.761] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:11:25.761] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:12:12.686] [info] Reloading...
+[2025-04-05 12:12:12.693] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:12:12.693] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:12:12.721] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:12:12.721] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:14:34.484] [info] Reloading...
+[2025-04-05 12:14:34.485] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:14:34.486] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:14:34.510] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:14:34.510] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:15:10.708] [info] Reloading...
+[2025-04-05 12:15:10.715] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:15:10.715] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:15:10.745] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:15:10.745] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:20:59.165] [info] Reloading...
+[2025-04-05 12:20:59.175] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:20:59.175] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:20:59.210] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:20:59.210] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:35.954] [info] Reloading...
+[2025-04-05 12:21:35.958] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:35.958] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:35.985] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:35.985] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:43.110] [info] Reloading...
+[2025-04-05 12:21:43.112] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:43.112] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:43.139] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:43.139] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:46.487] [info] Reloading...
+[2025-04-05 12:21:46.495] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:46.495] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:46.521] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:46.521] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:48.994] [info] Reloading...
+[2025-04-05 12:21:49.001] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:49.001] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:49.030] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:49.031] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:52.964] [info] Reloading...
+[2025-04-05 12:21:52.972] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:52.972] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:53.004] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:53.004] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:57.341] [info] Reloading...
+[2025-04-05 12:21:57.343] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:57.343] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:57.376] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:57.376] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:21:59.673] [info] Reloading...
+[2025-04-05 12:21:59.675] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:21:59.675] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:21:59.701] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:21:59.701] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:22:07.750] [info] Reloading...
+[2025-04-05 12:22:07.752] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:22:07.752] [info] Using CSS file /home/a/.config/waybar/style.css
+basic_string::_M_create
+[2025-04-05 12:22:07.782] [warning] Requested height: 30 is less than the minimum height: 36 required by the modules
+[2025-04-05 12:22:07.782] [info] Bar configured (width: 1920, height: 36) for output: eDP-1
+[2025-04-05 12:26:08.758] [info] Reloading...
+[2025-04-05 12:26:08.765] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-04-05 12:26:08.766] [error] Error parsing JSON: * Line 29, Column 5
+  Missing ',' or '}' in object declaration
+

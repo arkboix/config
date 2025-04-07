@@ -1,0 +1,420 @@
+/*
+ * ULTRA NIRI WAYBAR CONFIG
+ * Inspired by GNOME panel with superior aesthetics and functionality
+ * Using Ubuntu Nerd Font for icons and workspace indicators
+ */
+
+
+/*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one.*/
+
+
+
+/* Tokyo Night */
+@define-color background #1a1b26;
+@define-color background-light #24283b;
+@define-color foreground #c0caf5;
+@define-color black #15161e;
+@define-color red #f7768e;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color blue #7aa2f7;
+@define-color magenta #bb9af7;
+@define-color cyan #7dcfff;
+@define-color white #a9b1d6;
+@define-color orange #ff9e64;
+
+
+/* Everforest Dark Colors */
+@define-color background #2b3339;
+@define-color background-light #323c41;
+@define-color foreground #d3c6aa;
+@define-color black #3c474d;
+@define-color red #e67e80;
+@define-color green #a7c080;
+@define-color yellow #dbbc7f;
+@define-color blue #7fbbb3;
+@define-color magenta #d699b6;
+@define-color cyan #83c092;
+@define-color white #d3c6aa;
+@define-color orange #e69875;
+
+/* Pastel TTY Colors */
+@define-color background #212121;
+@define-color background-light #3a3a3a;
+@define-color foreground #e0e0e0;
+@define-color black #5a5a5a;
+@define-color red #ff9a9e;
+@define-color green #b5e8a9;
+@define-color yellow #ffe6a7;
+@define-color blue #63a4ff;
+@define-color magenta #dda0dd;
+@define-color cyan #a3e8e8;
+@define-color white #ffffff;
+@define-color orange #ff8952;
+
+
+
+/* Gruvbox Dark Colors */
+@define-color background #282828;
+@define-color background-light #3c3836;
+@define-color foreground #ebdbb2;
+@define-color black #32302f;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #ebdbb2;
+@define-color orange #d65d0e;
+
+
+/* One Dark */
+
+@define-color background #282c34;
+@define-color background-light #3e4451;
+@define-color foreground #abb2bf;
+@define-color black #282c34;
+@define-color red #e06c75;
+@define-color green #98c379;
+@define-color yellow #e5c07b;
+@define-color blue #61afef;
+@define-color magenta #c678dd;
+@define-color cyan #56b6c2;
+@define-color white #abb2bf;
+@define-color orange #d19a66;
+
+
+/* Module-specific colors */
+@define-color workspaces-color @foreground;
+@define-color workspaces-focused-bg @green;
+@define-color workspaces-focused-fg @cyan;
+@define-color workspaces-urgent-bg @red;
+@define-color workspaces-urgent-fg @black;
+
+/* Text and border colors for modules */
+@define-color mode-color @orange;
+@define-color mpd-color @magenta;
+@define-color weather-color @magenta;
+@define-color playerctl-color @magenta;
+@define-color clock-color @blue;
+@define-color cpu-color @green;
+@define-color memory-color @magenta;
+@define-color temperature-color @yellow;
+@define-color temperature-critical-color @red;
+@define-color battery-color @cyan;
+@define-color battery-charging-color @green;
+@define-color battery-warning-color @yellow;
+@define-color battery-critical-color @red;
+@define-color network-color @blue;
+@define-color network-disconnected-color @red;
+@define-color pulseaudio-color @orange;
+@define-color pulseaudio-muted-color @red;
+@define-color backlight-color @yellow;
+@define-color disk-color @cyan;
+@define-color uptime-color @green;
+@define-color updates-color @orange;
+@define-color quote-color @green;
+@define-color idle-inhibitor-color @foreground;
+@define-color idle-inhibitor-active-color @red;
+
+
+/* Base styling for the entire bar */
+* {
+    font-family: "Ubuntu Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    border-bottom: 2px solid @blue;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Smooth transitions for module hover effects */
+tooltip {
+    background-color: @background-light;
+    border: 2px solid @blue;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @foreground;
+    padding: 4px 8px;
+}
+
+/* Advanced styling for workspaces with subtle indicators */
+#workspaces {
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 6px;
+}
+
+#workspaces button {
+    color: @workspaces-color;
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background-color: @background;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#workspaces button:hover {
+    background-color: @background-light;
+    color: @workspaces-focused-fg;
+    box-shadow: 0 0 2px @workspaces-focused-fg;
+}
+
+#workspaces button.focused {
+    background-color: @workspaces-focused-bg;
+    color: @black;
+    border-radius: 6px;
+    box-shadow: 0 0 4px @workspaces-focused-bg;
+}
+
+#workspaces button.urgent {
+    background-color: @workspaces-urgent-bg;
+    color: @workspaces-urgent-fg;
+    box-shadow: 0 0 4px @workspaces-urgent-bg;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.8; }
+    to { opacity: 1.0; }
+}
+
+/* Mode module with distinctive styling */
+#mode {
+    background-color: @mode-color;
+    color: @black;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 158, 100, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 158, 100, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 158, 100, 0); }
+}
+
+/* Clock module styled like GNOME but better */
+#clock {
+    background-color: @background-light;
+    color: @clock-color;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+    font-weight: bold;
+    border-bottom: 2px solid @clock-color;
+}
+
+/* System modules with consistent styling */
+#pulseaudio, 
+#network, 
+#cpu, 
+#memory, 
+#temperature, 
+#backlight, 
+#battery,
+#disk,
+#idle-inhibitor,
+#updates {
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 2px;
+    padding: 0 10px 0 8px;
+    border-left: 2px solid @background-light;
+    transition: border-left 0.3s ease-in-out;
+}
+
+/* Hover effects for all modules */
+#pulseaudio:hover, 
+#network:hover, 
+#cpu:hover, 
+#memory:hover, 
+#temperature:hover, 
+#backlight:hover, 
+#battery:hover,
+#disk:hover,
+#idle-inhibitor:hover,
+#updates:hover {
+    border-left: 2px solid @blue;
+    background-color: alpha(@background-light, 0.8);
+}
+
+/* Individual module styling with specific colors */
+#pulseaudio {
+    color: @pulseaudio-color;
+}
+
+#pulseaudio.muted {
+    color: @pulseaudio-muted-color;
+    background-color: @black;
+}
+
+#network {
+    color: @network-color;
+}
+
+#network.disconnected {
+    color: @network-disconnected-color;
+    background-color: alpha(@black, 0.8);
+}
+
+#cpu {
+    color: @cpu-color;
+}
+
+#memory {
+    color: @memory-color;
+}
+
+#temperature {
+    color: @temperature-color;
+}
+
+#temperature.critical {
+    color: @temperature-critical-color;
+    animation: temp-critical 1s infinite alternate;
+}
+
+@keyframes temp-critical {
+    from { background-color: alpha(@temperature-critical-color, 0.2); }
+    to { background-color: alpha(@temperature-critical-color, 0.4); }
+}
+
+#backlight {
+    color: @backlight-color;
+}
+
+#battery {
+    color: @battery-color;
+}
+
+#battery.charging {
+    color: @battery-charging-color;
+    background-color: alpha(@battery-charging-color, 0.1);
+}
+
+#battery.warning:not(.charging) {
+    color: @battery-warning-color;
+    background-color: @black;
+}
+
+#battery.critical:not(.charging) {
+    color: @battery-critical-color;
+    background-color: alpha(@black, 0.9);
+    animation: batt-critical 1s infinite alternate;
+}
+
+@keyframes batt-critical {
+    from { border-color: @battery-critical-color; }
+    to { border-color: @background-light; }
+}
+
+#disk {
+    color: @disk-color;
+}
+
+#idle-inhibitor {
+    color: @idle-inhibitor-color;
+}
+
+#idle-inhibitor.activated {
+    color: @idle-inhibitor-active-color;
+    background-color: alpha(@idle-inhibitor-active-color, 0.1);
+}
+
+#updates {
+    color: @updates-color;
+}
+
+#updates.zero {
+    color: @green;
+}
+
+#updates.urgent {
+    color: @red;
+    background-color: alpha(@red, 0.2);
+}
+
+#tray {
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#mpd {
+    color: @mpd-color;
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+}
+
+#mpd.disconnected {
+    color: @network-disconnected-color;
+}
+
+#mpd.stopped {
+    color: @red;
+}
+
+#mpd.playing {
+    color: @mpd-color;
+    background-color: alpha(@mpd-color, 0.1);
+}
+
+#custom-weather {
+    color: @weather-color;
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+}
+
+#custom-playerctl {
+    color: @playerctl-color;
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+    min-width: 100px;
+}
+
+#custom-quote, #custom-uptime {
+    color: @quote-color;
+    background-color: @background-light;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 10px;
+}

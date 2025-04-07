@@ -1,0 +1,464 @@
+# https://github.com/arkboix
+# Sway WM Configuration File
+# AUTHOR: Arkboi X
+# CREDIT: https://github.com/arkboix
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your preferred terminal emulator
+set $term kitty
+
+# Your preferred application launcher
+set $menu rofi -show drun
+
+# File Manager
+set $file-manager nemo
+
+## Mouse Cursor
+seat * xcursor_theme Bibata-Modern-Ice 24
+exec --no-startup-id dbus-update-activation-environment --systemd XCURSOR_THEME=Bibata-Modern-Ice
+exec --no-startup-id dbus-update-activation-environment --systemd XCURSOR_SIZE=24
+
+# For settings firefox as your browser, you could replace the browser line with this:
+# set $web-browser firefox
+# And same goes for any browser, just replace the command with whatever command is used to launch your browser.
+# Brave browser users need to set command as brave-bin
+# Your preferred Browser
+set $web-browser floorp
+
+# lock screen
+set $lock 'swaylock \
+    --color 2d353b \
+    --inside-color 3a454a \
+    --inside-clear-color 5c6a72 \
+    --inside-ver-color 5a524c \
+    --inside-wrong-color 543a3a \
+    --ring-color 7a8478 \
+    --ring-clear-color a7c080 \
+    --ring-ver-color dbbc7f \
+    --ring-wrong-color e67e80 \
+    --key-hl-color d699b6 \
+    --bs-hl-color e69875 \
+    --separator-color 2d353b \
+    --text-color d3c6aa \
+    --text-clear-color d3c6aa \
+    --text-ver-color d3c6aa \
+    --text-wrong-color d3c6aa \
+    --indicator-radius 100 \
+    --indicator-thickness 10 \
+    --font "Iosevka Nerd Font Mono"'
+
+### OBS Fixes and XDG Desktop
+
+# Set XDG_CURRENT_DESKTOP for proper Wayland support
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+
+# Start xdg-desktop-portal services (ensure wlr starts first)
+exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr &
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+
+
+
+### Sov
+
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
+
+### Colorscheme
+
+# Everforest colors
+#set $bg0  #2d353b
+#set $bg1  #343f44
+#set $fg   #d3c6aa
+#set $green #a7c080
+#set $blue  #7fbbb3
+#set $yellow #dbbc7f
+#set $gray  #868d80
+
+# Pastel TTY Colors
+#set $bg0    #282828
+#set $bg1    #323232
+#set $fg     #e0e0e0
+#set $green  #b5e8a9
+#set $blue   #a5d8ff
+#set $yellow #ffe6a7
+#set $gray   #a0a0a0
+#set $red    #ff9a9e
+#set $magenta #dda0dd
+#set $cyan   #a3e8e8
+#set $white  #ffffff
+#set $orange #ffbb8a
+
+# Gruvbox
+#set $bg0    #282828
+#set $bg1    #3c3836
+#set $fg     #ebdbb2
+#set $green  #b8bb26
+#set $blue   #83a598
+#set $yellow #fabd2f
+#set $gray   #928374
+#set $red    #fb4934
+#set $magenta #d3869b
+#set $cyan   #8ec07c
+#set $white  #ebdbb2
+#set $orange #fe8019
+
+# One Dark
+set $bg0    #282c34
+set $bg1    #3e4451
+set $fg     #abb2bf
+set $green  #98c379
+set $blue   #61afef
+set $yellow #e5c07b
+set $gray   #5c6370
+set $red    #e06c75
+set $magenta #c678dd
+set $cyan   #56b6c2
+set $white  #ffffff
+set $orange #d19a66
+
+### Output configuration
+#
+#
+output HDMI-A-1 resolution 1920x1080 position 1920,0
+
+### Idle configuration
+#
+exec swayidle -w \
+    timeout 300 'swaylock \
+        --color 2d353b \
+        --inside-color 3a454a \
+        --inside-clear-color 5c6a72 \
+        --inside-ver-color 5a524c \
+        --inside-wrong-color 543a3a \
+        --ring-color 7a8478 \
+        --ring-clear-color a7c080 \
+        --ring-ver-color dbbc7f \
+        --ring-wrong-color e67e80 \
+        --key-hl-color d699b6 \
+        --bs-hl-color e69875 \
+        --separator-color 2d353b \
+        --text-color d3c6aa \
+        --text-clear-color d3c6aa \
+        --text-ver-color d3c6aa \
+        --text-wrong-color d3c6aa \
+        --indicator-radius 100 \
+        --indicator-thickness 10 \
+        --font "Iosevka Nerd Font Mono"' \
+    timeout 600 'swaymsg output "*" power off' \
+    resume 'swaymsg output "*" power on' \
+    before-sleep 'swaylock -f -c 000000'
+
+
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Font Configuration
+
+font pango:Iosevka Nerd Font Mono 12
+
+### Autostart
+
+
+## Sway Automatic Tiling
+exec autotiling -l 2
+
+## Flameshot
+exec flameshot
+
+## Emacs Daemon
+exec /usr/bin/emacs --daemon
+
+## Clipboard
+exec wl-paste --type text --watch cliphist store &
+exec wl-paste --type image --watch cliphist store &
+
+# NetworkManager
+exec nm-applet
+
+## Waybar
+exec waybar
+
+## SWWW Wallpaper Daemon
+exec swww-daemon
+
+## SWWW Random Wallpaper
+exec ~/.config/sway/scripts/random-wallpaper.sh
+
+## Mako Notification
+exec mako
+
+## NWG Wrapper keybinds
+exec nwg-wrapper -s sway.sh -p right -mr 10
+
+## Autostart Applications
+
+exec swaymsg "workspace 1; exec floorp"
+exec swaymsg "workspace 3; exec kitty"
+
+
+### Window Rules
+
+for_window [app_id="yad"] floating enable
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position center, resize set 600 400
+
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Start Emacs
+    bindsym $mod+e exec emacsclient -c
+
+    # Sticky Mode
+    bindsym $mod+a exec sticky enable
+
+    # Clipboard
+    bindsym $mod+v exec cliphist list | rofi -dmenu -p "Clipboard" -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy
+
+    # Emoji Picker
+    bindsym $mod+s exec rofi -show emoji -modi emoji -matching regex -sorting-method levenshtein
+
+
+    # Lock
+    bindsym $mod+shift+t exec $lock
+
+    # Tiling Modes
+    bindsym $mod+u exec ~/.config/sway/scripts/tiling.sh
+
+    # Screen Record
+    bindsym $mod+g exec ~/.config/sway/scripts/prompt-record.sh
+
+    # File Manager
+    bindsym $mod+y exec $file-manager
+
+# Reload Waybar
+    bindsym $mod+shift+a exec pkill -SIGUSR2 waybar
+
+    # Call the browser variable and launch it with $mod+b
+    bindsym $mod+b exec $web-browser
+
+    # Kill focused window
+    bindsym $mod+w kill
+
+
+    # Wallpaper
+    bindsym $mod+c exec ~/.config/sway/scripts/wallpaper.sh
+
+    # Logout
+    bindsym ctrl+alt+delete exec nwg-bar
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    # Resize windows with left mouse button while holding $mod
+    floating_modifier $mod normal
+    bindsym $mod+button1 resize
+
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+bindsym --no-repeat $mod+1 workspace number 1; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+2 workspace number 2; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+3 workspace number 3; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+4 workspace number 4; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+5 workspace number 5; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+6 workspace number 6; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+7 workspace number 7; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+8 workspace number 8; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+9 workspace number 9; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+0 workspace number 10; exec "echo 1 > /tmp/sovpipe"
+
+bindsym --release $mod+1 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+2 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+3 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+4 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+5 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+6 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+7 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+8 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+9 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+0 exec "echo 0 > /tmp/sovpipe"
+
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+
+# Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+
+    # Switch the current container between different layout styles
+    bindsym $mod+shift+s layout stacking
+    bindsym $mod+t floating toggle
+
+
+    # Manual Tiling Modes
+       bindsym $mod+p splith
+    bindsym $mod+o splitv
+
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special key to take a screenshot with grim
+    bindsym Print exec flameshot gui
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+##bar {
+#   position top
+
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+  #status_command ~/.config/sway/scripts/status.sh
+
+
+ #colors {
+  #  statusline $fg
+   #     background $bg0
+    #    inactive_workspace $bg0 $bg0 $bg1
+     #   focused_workspace $orange $bg1 $orange
+
+   #}
+ #}
+
+include @sysconfdir@/sway/config.d/*
+
+## Sway Borders
+
+
+# Focused window (active)
+client.focused $blue $bg1 $fg $blue $blue
+
+# Unfocused window (inactive)
+client.unfocused $bg0 $bg1 $gray $bg0 $bg1
+
+# Urgent window (e.g., alerts)
+client.urgent $red $bg1 $fg $red $red
+
+
+for_window [app_id="showmethekey-gtk"] floating enable, sticky enable
+# Borders and Gaps.
+
+gaps inner 4
+gaps outer 4
+
+default_border pixel 2
+
+titlebar_padding 8 2
+titlebar_border_thickness 2
