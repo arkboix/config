@@ -1,0 +1,19 @@
+#+TITLE: Arkboi's Dotfiles
+#+AUTHOR: Arkboi
+
+
+A huge pile of config files.
+
+** Features
+
+- Old configs i dont use
+- My social security number
+
+
+
+
+** Not for you bud.
+
+
+This is just a backup incase I reinstall or distrohop, I won't provide instructions on how to install onto your computer, if you want to do so,
+then just do it, it is stow compatible.
